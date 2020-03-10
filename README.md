@@ -71,5 +71,3 @@ I will do this in my account on HiPerGator, but you could do it on your computer
          * If you have not setup SSH keys, you will be asked for your github.com username and password.
 
 ## Continue on the [Hands-on page 2](Hands-on2.md)
-
-
