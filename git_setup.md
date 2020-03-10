@@ -43,4 +43,5 @@ When you activate two-factor authentication, it does change how you work with yo
 ![Screenshot of Clone or download drop down showing Use SSH link](images/git_clone_ssh.png) 
 
 and then copy the ssh link:
+
 ![Screenshot of Clone or download drop down showing the ssh link](images/git_clone_ssh2.png)
