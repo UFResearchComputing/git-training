@@ -14,7 +14,6 @@ Source | Notes
 [GitHub Learning Lab](https://lab.github.com/) | This site has many lessons that use github.com and automation to walk users through hands-on exercises to learn aspects of git and github.com using the tools.
 [try.github.io/](https://try.github.io/) | More github tutorials
 
-
 ## Setup
 The [git_setup.md](git_setup.md) page has some basic git and github configuration information.
 
@@ -45,11 +44,11 @@ To create a new repo, on github.com, click the +-icon in the top right and selec
 
 ![Screenshot of create repo icon](images/git_new_repo.png)
 
-Let's call this repo "planets" and leave the rest of the settings with the defaults and click Create repository:
+Let's call this repo "planets" and leave the rest of the settings with the defaults and click "Create repository":
 
 ![Screenshot of the create repo page](images/git_new_repo_details.png)
 
-Note that I have my account setup for SSH keys, so I clicked the "SSH" button circled in red below. If you have not setup SSK keys and two-factor authentication, you can leave the HTTPS button clicked. 
+Note that I have my account setup for SSH keys, so I clicked the "SSH" button circled in red below. If you have not setup SSK keys and two-factor authentication, you can leave the HTTPS button clicked.
 
 ![Screen shot of the info to make a new repo](images/git_new_repo_info.png)
 
@@ -60,13 +59,13 @@ I will do this in my account on HiPerGator, but you could do it on your computer
 1. Make a directory for this repository: `mkdir planets`
    * It is best if the directory name matches the repository name
 1. Change directories into this new folder: `cd planets`
-1. Copy the commands in the "…or create a new repository on the command line" box on the github page and then past them into your terminal--**Make sure you are in the `planets` directory**:
+1. Copy the commands in the "…or create a new repository on the command line" box on the github.com page and then paste them into your terminal--**Make sure you are in the `planets` directory**:
    * These commands do a number of things:
       * `echo "# planets" >> README.md` Creates the starts of the README.md document for the repo.
-      * `git init` Tells Git that this is a git repository and creates all the infrastructure to treat it as such.
-      * `git add README.md` Places the README.md file in the staging area and tells Git to track changes to this file.
+      * `git init` Tells git that this is a git repository and creates all the infrastructure to treat it as such.
+      * `git add README.md` Places the README.md file in the staging area and tells git to track changes to this file.
       * `git commit -m "first commit"` Commits the changes to the local repo. This records the changes and sets a point in history that can be recovered.
-      * `git remote add origin git@github.com:*magitz*/planets.git` This connects the local repo to the one on GitHub that we made to start with. **Note:** My github username is *magitz*, you will need to use your username.
+      * `git remote add origin git@github.com:*magitz*/planets.git` This connects the local repo to the one on GitHub that we made to start with. **Note:** My github username is *magitz*, you will need to use your username. But that should be set when you copy/paste.
       * `git push -u origin master` This `push`es our changes to GitHub.
          * If you have not setup SSH keys, you will be asked for your github.com username and password.
 

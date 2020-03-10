@@ -10,7 +10,7 @@ Before we time travel, let's add a couple more lines to our `mars.txt` file:
 
 > An ill-considered change
 
-And add, commit and push the changes.
+Add, commit and push the change.
 
 The current commit is referred to as the HEAD. One way to see previous versions of the repo is using the `~#` construct to see `#` commits ago. So for example, I can do:
 
@@ -35,34 +35,13 @@ index 0000000..d927c56
 
 Which shows 2 commits prior to the current HEAD. It also shows the commit hash if I want that, the date and time of the commit and the commit message.
 
-If I want to go back in time, I can `git show` that commit:
-
-```bash
-[magitz@login2 planets]$ git show HEAD~2
-commit ea083bf0276b2a81731b864f8d0bafd7a73fafb2
-Author: Matt Gitzendanner <magitz@ufl.edu>
-Date:   Tue Mar 10 13:06:05 2020 -0400
-
-    Start notes on Mars as a base
-
-diff --git a/mars.txt b/mars.txt
-new file mode 100644
-index 0000000..d927c56
---- /dev/null
-+++ b/mars.txt
-@@ -0,0 +1,2 @@
-+Cold and dry, but everything is my favorite color
-+
-[magitz@login2 planets]$
-```
-
-If I had messed things up or deleted some important information, I can recover it.
+If I had messed things up or deleted some important information, I can recover it from previous commits.
 
 ### Branching
 
-We currently have a great page with information about Mars. Let's imagine that we want to convert this page to use Markdown. The idea is similar to you having a functional script that you now want to add a feature to or try a new approach to something to see if you can improve functionality. It may take some time to implement your changes and you don't want to break something that works, so it would be nice to work on a copy. With git, we can do this without actually copying everything by using a branch.
+We currently have a great page with information about Mars. Let's imagine that we want to convert this page to use Markdown. The idea is similar to you having a functional script that you now want to add a feature to or try a new approach for something to see if you can improve functionality, speed or usability. It may take some time to implement your changes and you don't want to break something that works, so it would be nice to work on a copy. With git, we can do this without actually copying everything by using a branch.
 
-Let's create a branch called markdown:
+Let's create a branch in our repository and name it "markdown":
 
 ```bash
 [magitz@login2 planets]$ git branch markdown
@@ -81,6 +60,7 @@ Let's run git status:
 nothing to commit, working directory clean
 [magitz@login2 planets]$
 ```
+
 Notice that I am on branch markdown, not master.
 
 Go ahead and edit the `mars.txt` file.
@@ -101,8 +81,8 @@ The two moons may be a problem for Wolfman
 An ill-considered change
 ```
 
-
 Here's a git diff:
+
 ```bash
 [magitz@login2 planets]$ git diff
 diff --git a/mars.txt b/mars.txt
@@ -154,47 +134,49 @@ Branch markdown set up to track remote branch markdown from origin.
 [magitz@login2 planets]$
 ```
 
-**Notice** that when we try to do the `git push` git tells us that it can't do that since there isn't an "upstream branch" or somewhere to push this to. But again, git offers a suggestion and the command ` git push --set-upstream origin markdown` is indeed what we want--make a branch called "markdown" in the source called "origin"--which is what our github.com repository is called.
+**Notice** that when we try to do the `git push` git tells us that it can't do that since there isn't an "upstream branch" or somewhere to push to. But again, git offers a suggestion and the command ` git push --set-upstream origin markdown` is indeed what we want--make a branch called "markdown" in the place called "origin"--which is what our github.com repository is called.
 
 Go back to github.com and reload the repo. You will see that there is a notification of a new branch:
+
 ![Screenshot of new branch pushed in github.com](images/git_branch.png)
 
-Click on the mars.txt file. What does it look like?
+Click on the `mars.txt` file. What does it look like?
 
-We are viewing the master branch. Eveything is there and just as we left it. If we want to see the markdown branch, we can select that from the pull down:
+We are viewing the master branch. Everything is there and just as we left it. If we want to see the markdown branch, we can select that from the pull down:
 ![Screenshot of changing branches](images/git_change_branch.png)
 
 ### Change master branch
 
-We realize that we want to get rid of our ill considered change. Let's do this in the mast branch. Check that out (`git checkout master`), make the change, add the file, commit the change and push it to github.
+We realize that we want to get rid of our ill considered change. But aren't done moving our content to Markdown. That's fine. We can still edit the master branch too. Check out the master branch (`git checkout master`), make the change (deleting the last line "`An ill-considered change`"), add the file, commit the change and push it to github.
 
 ### Merge the branch
 
 Now we decide that we are ready to merge our markdown branch into the master--effectively replace the old version with the new version.
 
-Go back to the main page of repo on github and this time, click the Comapre and pull request button.
+Go back to the main page of repo on github and this time, click the "Compare and pull request" button.
+
 ![Screenshot of changing branches](images/git_change_branch.png)
 
 On the page that comes up, we are opening a pull request--a request to pull the changes one the markdown branch into the master branch.
 
 ![Screenshot of pull request](images/git_pull_request.png)
 
-Also notice that github is showing that the request Can't be automatically merged. That is because there are changes on both the master and markdown branch since the two diverged. If we hadn't made the change on the master brach above, github would be able to automatically merge the request. But now we need to do some human intervention to sort out the conflicts.
+Also notice that github is showing that the request Can't be automatically merged. That is because there have been changes made on both the master and markdown branch since the two diverged (when me created the markdown branch). If we hadn't made the change on the master brach above, github would be able to automatically merge the request. But now we need to do some human intervention to sort out the conflicts.
 
-Go ahead and click the Create Pull Request button.
+Go ahead and click the "Create Pull Request" button. That pulls up the information about the conflicts that need to be resolved:
 
-That pulls up the information about the conflicts that need to be resolved:
 ![Screenshot of merge conflicts](images/git_merge_conflicts.png)
 
-Notice that the Merge pull request is greyed out because you have not resolved the conflicts. Click on the Resolve conflicts button.
+Notice that the "Merge pull request" button is greyed out because you have not resolved the conflicts. Click on the "Resolve conflicts" button.
 
 ![Screenshot of conflicts](images/git_conflicts.png)
 
-The screen that comes up highlights the part of the file that are conflicting. Your job it to make it look how you want. You need to delete the <<<<<<<<markdown, =====, etc. and text that you don't want. Essentially git had pointed out where the conflicts lie and added some text to help you understand the differences. Now it is up to you to make a file that you want for the merged version.
+The screen that comes up highlights the parts of the file that are conflicting. Your job is to make it look how you want. You need to delete the <<<<<<<<markdown, =====, etc. and text that you don't want. Essentially git has pointed out where the conflicts lie and added some text to help you find the differences. Now it is up to you to make a file that you want for the merged version.
 
-When you are done editing the file, click the Mark as resolved button, then click the Commit merge button.
+When you are done editing the file, click the "Mark as resolved" button, then click the "Commit merge" button. As a note, for complex merges, you can make multiple commits in the merge process to break up testing and development on portions of the changes.
 
 Now you can merge the pull request:
+
 ![Screenshot of merge pull request](images/git_merge_pull_request.png)
 
 Confirm the merge and if you want, delete the markdown branch.
@@ -211,6 +193,6 @@ Here are the steps we worked through:
 * Push the changes to the remote repo (github.com)
 * Make a branch for development, testing or other work
 * Make changes on the branch
-* Create a pull request to merge the banch back into the master
-* Resolve confilcts and commit the pull request
+* Create a pull request to merge the branch back into the master
+* Resolve conflicts and commit the pull request
 

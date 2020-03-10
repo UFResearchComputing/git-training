@@ -18,7 +18,7 @@ $ git config --global user.email johndoe@example.com
 
 Git uses your system's default editor--typically vim on Linux systems--as the text editor for commit messages. You can configure your preferred editor with one of the examples on this great table from the [Software Carpentry git lesson](http://swcarpentry.github.io/git-novice/02-setup/index.html):
 
-| Editor             | Configuration command                            |
+| Editor             | Configuration command (do not type the "$")                           |
 |:-------------------|:-------------------------------------------------|
 | Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
@@ -39,8 +39,9 @@ Git uses your system's default editor--typically vim on Linux systems--as the te
 
 As a security best-practice, it is generally best to use two-factor authentication when available. GitHub.com offers two-factor authentication and is configured in the [Settings : Security](https://github.com/settings/security) section of your account.
 
-When you activate two-factor authentication, it does change how you work with your own repositories. In general, it is easiest if you [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "Use SSH" link in the top right corner of the box:
-![Screenshot of Clone or download drop down showing Use SSH link](images/git_clone_ssh.png) 
+When you activate two-factor authentication, it does change how you work with your own repositories (you won't be able to push using username and password). In general, it is easiest if you [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "Use SSH" link in the top right corner of the box:
+
+![Screenshot of Clone or download drop down showing Use SSH link](images/git_clone_ssh.png)
 
 and then copy the ssh link:
 
