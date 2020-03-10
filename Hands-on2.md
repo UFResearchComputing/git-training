@@ -160,3 +160,5 @@ To git@github.com:magitz/planets.git
 [magitz@login2 planets]$
 
 ```
+
+## Continue on the [Hands-on page 3](Hands-on3.md)
