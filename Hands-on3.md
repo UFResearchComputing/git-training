@@ -61,7 +61,7 @@ nothing to commit, working directory clean
 [magitz@login2 planets]$
 ```
 
-Notice that I am on branch markdown, not master.
+Notice that I am on branch markdown, not main.
 
 Go ahead and edit the `mars.txt` file.
 
@@ -142,26 +142,26 @@ Go back to github.com and reload the repo. You will see that there is a notifica
 
 Click on the `mars.txt` file. What does it look like?
 
-We are viewing the master branch. Everything is there and just as we left it. If we want to see the markdown branch, we can select that from the pull down:
+We are viewing the main branch. Everything is there and just as we left it. If we want to see the markdown branch, we can select that from the pull down:
 ![Screenshot of changing branches](images/git_change_branch.png)
 
-### Change master branch
+### Change main branch
 
-We realize that we want to get rid of our ill considered change. But aren't done moving our content to Markdown. That's fine. We can still edit the master branch too. Check out the master branch (`git checkout master`), make the change (deleting the last line "`An ill-considered change`"), add the file, commit the change and push it to github.
+We realize that we want to get rid of our ill considered change. But aren't done moving our content to Markdown. That's fine. We can still edit the main branch too. Check out the main branch (`git checkout main`), make the change (deleting the last line "`An ill-considered change`"), add the file, commit the change and push it to github.
 
 ### Merge the branch
 
-Now we decide that we are ready to merge our markdown branch into the master--effectively replace the old version with the new version.
+Now we decide that we are ready to merge our markdown branch into the main--effectively replace the old version with the new version.
 
 Go back to the main page of repo on github and this time, click the "Compare and pull request" button.
 
 ![Screenshot of changing branches](images/git_change_branch.png)
 
-On the page that comes up, we are opening a pull request--a request to pull the changes one the markdown branch into the master branch.
+On the page that comes up, we are opening a pull request--a request to pull the changes one the markdown branch into the main branch.
 
 ![Screenshot of pull request](images/git_pull_request.png)
 
-Also notice that github is showing that the request Can't be automatically merged. That is because there have been changes made on both the master and markdown branch since the two diverged (when me created the markdown branch). If we hadn't made the change on the master brach above, github would be able to automatically merge the request. But now we need to do some human intervention to sort out the conflicts.
+Also notice that github is showing that the request Can't be automatically merged. That is because there have been changes made on both the main and markdown branch since the two diverged (when me created the markdown branch). If we hadn't made the change on the main brach above, github would be able to automatically merge the request. But now we need to do some human intervention to sort out the conflicts.
 
 Go ahead and click the "Create Pull Request" button. That pulls up the information about the conflicts that need to be resolved:
 
@@ -193,6 +193,6 @@ Here are the steps we worked through:
 * Push the changes to the remote repo (github.com)
 * Make a branch for development, testing or other work
 * Make changes on the branch
-* Create a pull request to merge the branch back into the master
+* Create a pull request to merge the branch back into the main
 * Resolve conflicts and commit the pull request
 

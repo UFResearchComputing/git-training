@@ -48,7 +48,7 @@ Git can tell us about the status of the files in a repo:
 
 ```bash
 [magitz@login2 planets]$ git status
-# On branch master
+# On branch main
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
@@ -62,7 +62,7 @@ Git is also often helpful with suggesting commands. It found the untracked file 
 ```bash
 [magitz@login2 planets]$ git add mars.txt
 [magitz@login2 planets]$ git status
-# On branch master
+# On branch main
 # Changes to be committed:
 #   (use "git reset HEAD <file>..." to unstage)
 #
@@ -84,19 +84,19 @@ Now let's commit the changes and check the status again. When we commit changes,
 
 ```bash
 [magitz@login2 planets]$ git commit -m "Start notes on Mars as a base"
-[master ea083bf] Start notes on Mars as a base
+[main ea083bf] Start notes on Mars as a base
  1 file changed, 2 insertions(+)
  create mode 100644 mars.txt
 [magitz@login2 planets]$ git status
-# On branch master
-# Your branch is ahead of 'origin/master' by 1 commit.
+# On branch main
+# Your branch is ahead of 'origin/main' by 1 commit.
 #   (use "git push" to publish your local commits)
 #
 nothing to commit, working directory clean
 [magitz@login2 planets]$
 ```
 
-You can see that the commit shows a summary of the commit. We changed 1 file and added 2 lines--in my case anyway, I added a blank line after the line of text. `git status` shows that we are 1 commit ahead of the origin/master. And git again gives us helpful information about a command we might want to run: `git push`. Let's run that:
+You can see that the commit shows a summary of the commit. We changed 1 file and added 2 lines--in my case anyway, I added a blank line after the line of text. `git status` shows that we are 1 commit ahead of the origin/main. And git again gives us helpful information about a command we might want to run: `git push`. Let's run that:
 
 ```bash
 [magitz@login2 planets]$ git push
@@ -106,7 +106,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 343 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To git@github.com:magitz/planets.git
-   2e264b1..ea083bf  master -> master
+   2e264b1..ea083bf  main -> main
 [magitz@login2 planets]$
 ```
 
@@ -117,7 +117,7 @@ Lastly, if we run `git status` again, we will see we are all in sync with nothin
 
 ```bash
 [magitz@login2 planets]$ git status
-# On branch master
+# On branch main
 nothing to commit, working directory clean
 [magitz@login2 planets]$
 ```
@@ -128,11 +128,12 @@ Let's add another line of text to the `mars.txt` file. Edit the file so that it 
 > Cold and dry, but everything is my favorite color
 
 > The two moons may be a problem for Wolfman
+
 Then run `git status` and the new command, `git diff`:
 
 ```bash
 [magitz@login2 planets]$ git status
-# On branch master
+# On branch main
 # Changes not staged for commit:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -161,7 +162,7 @@ Add, commit and push the changes:
 ```bash
 [magitz@login2 planets]$ git add mars.txt
 [magitz@login2 planets]$ git commit -m "Add concerns about effects of Mars' moons on Wolfman"
-[master 2fbbb5b] Add concerns about effects of Mars' moons on Wolfman
+[main 2fbbb5b] Add concerns about effects of Mars' moons on Wolfman
  1 file changed, 1 insertion(+)
 [magitz@login2 planets]$ git push
 Counting objects: 5, done.
@@ -170,7 +171,7 @@ Compressing objects: 100% (3/3), done.
 Writing objects: 100% (3/3), 390 bytes | 0 bytes/s, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To git@github.com:magitz/planets.git
-   ea083bf..2fbbb5b  master -> master
+   ea083bf..2fbbb5b  main -> main
 [magitz@login2 planets]$
 
 ```
