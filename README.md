@@ -54,7 +54,7 @@ Let's call this repo "planets" and leave the rest of the settings with the defau
 
 ![Screenshot of the create repo page](images/git_new_repo_details.png)
 
-Note that I have my account setup for using SSH keys, so I clicked the "SSH" button circled in red below. If you have not setup SSK keys and two-factor authentication, you can leave the HTTPS button clicked.
+Note that I have my account setup for using SSH keys, so I clicked the "SSH" button circled in red below. If you have not setup SSH keys and two-factor authentication, you can leave the HTTPS button clicked.
 
 > To learn about setting up your github account to use ssh keys, check out the [git setup page](git_setup.md).
 
