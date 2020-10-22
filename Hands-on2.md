@@ -111,6 +111,7 @@ To git@github.com:magitz/planets.git
 ```
 
 And if we go to the web and refresh our repo again, we should see the mars.txt file there now, along with the message from the commit.
+
 ![Screenshot of planets repo #2](images/planets_2.png)
 
 Lastly, if we run `git status` again, we will see we are all in sync with nothing to do:

@@ -143,6 +143,7 @@ Go back to github.com and reload the repo. You will see that there is a notifica
 Click on the `mars.txt` file. What does it look like?
 
 We are viewing the main branch. Everything is there and just as we left it. If we want to see the markdown branch, we can select that from the pull down:
+
 ![Screenshot of changing branches](images/git_change_branch.png)
 
 ### Change main branch
