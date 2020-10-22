@@ -46,3 +46,5 @@ When you activate two-factor authentication, it does change how you work with yo
 and then copy the ssh link:
 
 ![Screenshot of Clone or download drop down showing the ssh link](images/git_clone_ssh2.png)
+
+> There is also a [short video with a walk-through](https://web.microsoftstream.com/video/b0e02a2d-f108-44ff-aea2-276d98a8b524) of setting up ssh keys with github.
