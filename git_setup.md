@@ -35,16 +35,13 @@ Git uses your system's default editor--typically vim on Linux systems--as the te
 | Vim                | `$ git config --global core.editor "vim"`   |
 | VS Code                | `$ git config --global core.editor "code --wait"`   |
 
-## Setting up Two-factor authentication and ssh-keys
+## Setting up Two-factor authentication and ssh-keys for GitHub.com
 
 As a security best-practice, it is generally best to use two-factor authentication when available. GitHub.com offers two-factor authentication and is configured in the [Settings : Security](https://github.com/settings/security) section of your account.
 
-When you activate two-factor authentication, it does change how you work with your own repositories (you won't be able to push using username and password). In general, it is easiest if you [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "Use SSH" link in the top right corner of the box:
+As of August 2021, GitHub.com no long supports using username/password to work with repositories. You should setup and [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "SSH" link:
 
 ![Screenshot of Clone or download drop down showing Use SSH link](images/git_clone_ssh.png)
 
-and then copy the ssh link:
-
-![Screenshot of Clone or download drop down showing the ssh link](images/git_clone_ssh2.png)
 
 > There is also a [short video with a walk-through](https://web.microsoftstream.com/video/b0e02a2d-f108-44ff-aea2-276d98a8b524) of setting up ssh keys with github.
