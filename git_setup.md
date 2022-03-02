@@ -39,9 +39,8 @@ Git uses your system's default editor--typically vim on Linux systems--as the te
 
 As a security best-practice, it is generally best to use two-factor authentication when available. GitHub.com offers two-factor authentication and is configured in the [Settings : Security](https://github.com/settings/security) section of your account.
 
-As of August 2021, GitHub.com no long supports using username/password to work with repositories. You should setup and [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "SSH" link:
+**As of August 2021, GitHub.com no longer supports using username/password to work with repositories**. You should setup and [add a public ssh key to your github.com account](https://help.github.com/en/github/authenticating-to-github/adding-a-new-ssh-key-to-your-github-account). Once you do this, rather than using the HTTPS clone link, select the "SSH" link:
 
 ![Screenshot of Clone or download drop down showing Use SSH link](images/git_clone_ssh.png)
-
 
 > There is also a [short video with a walk-through](https://web.microsoftstream.com/video/b0e02a2d-f108-44ff-aea2-276d98a8b524) of setting up ssh keys with github.
